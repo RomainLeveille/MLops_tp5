@@ -45,7 +45,7 @@ pipeline {
    /* stage('merging'){
       steps{
         sshagent(credentials: ['8b03b3ed-9573-42b2-b121-b94740feccde']){
-          /*
+          #
           echo 'merging to main'
           bat 'git push origin main'
           bat 'git checkout main'
@@ -60,7 +60,7 @@ pipeline {
 
           bat 'git push -f origin main'
           //bat 'git push origin -d staging'
-          */
+          #
           
           bat'git fetch origin'
           
@@ -75,6 +75,7 @@ pipeline {
           
         }
       }
-    }*/
+    }
+*/
   }
 }
