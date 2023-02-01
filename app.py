@@ -21,7 +21,7 @@ from keras.models import load_model
 ## Application Setup
 ##########################################################################
 
-model = load_model('./model')
+model = load_model('/app/model')
 
 app = Flask(__name__)
 
