@@ -23,7 +23,7 @@ pipeline {
       steps {
         echo 'installing python'
         bat 'pip install -r requirements.txt'
-        bat 'python -m test_main' // can be possible also with unittest
+        bat 'python -m test_main'
       }
     }
     stage('Docker Image'){
@@ -32,14 +32,12 @@ pipeline {
         bat 'docker build -t monimage .'
                 
         echo'pushing to docker hub'
-        bat 'docker login -u matthieuhan -p dckr_pat_WFLU066NEZDZRXEscp2Hz83JZsA'
-        bat 'docker tag monimage matthieuhan/mlopstp6:latest'
-        bat 'docker push matthieuhan/mlopstp6:latest'
+        bat 'docker login -u romain1806 -p dckr_pat_kSx8KoxvfaaiegnNyjQxcZ5FxBc'
+        bat 'docker tag monimage romain1806/pipelinetp5:latest'
+        bat 'docker push romain1806/pipelinetp5:latest'
         
         echo 'running the image'
         bat 'docker run -d monimage'
-        //echo 'killing the image'
-        //bat 'docker stop -t 100 monimage'
       }
     }
    /* stage('merging'){
